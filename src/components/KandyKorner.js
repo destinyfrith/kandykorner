@@ -13,6 +13,7 @@ export const KandyKorner = () => {
             
         <h2>Products</h2>
         <ProductList />
+        
         </>
     )
 }
