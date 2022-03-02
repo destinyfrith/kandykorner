@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react";
 
 export const ProductList = () => {
     const [products, updateProducts] = useState([])
@@ -18,10 +18,12 @@ export const ProductList = () => {
         <>
             {
                 products.map(
-                    (product) => {
-                        return <div key={`product--${product.id}`}>
-                            <p>  {product.name} {product.price}
-                                {product.productTypeId.type} </p>
+                    (productObject) => {
+                        return <div key={`product--${productObject.id}`}>
+                            <p>  {productObject.name} {" "}
+                                {productObject.price} {" "}
+                                Category: {productObject.productTypeId.type} 
+                                </p>
                         </div>
                     }
                 )
