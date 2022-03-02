@@ -5,7 +5,7 @@ export const ProductList = () => {
 
     useEffect(
         () => {
-            fetch("http://localhost:8088/products?_expand=productType")
+            fetch("http://localhost:8088/products?_expand=productType&_sort=productTypeId&_order=asc")
                 .then(res => res.json())
                 .then((productData) => {
                     updateProducts(productData)
@@ -22,7 +22,7 @@ export const ProductList = () => {
                         return <div key={`product--${productObject.id}`}>
                             <p>  {productObject.name} {" "}
                                 {productObject.price} {" "}
-                                Category: {productObject.productTypeId.type} 
+                                Category: {productObject.productType.type} 
                                 </p>
                         </div>
                     }
