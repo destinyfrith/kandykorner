@@ -6,9 +6,11 @@ import { ApplicationViews } from "./ApplicationViews"
 export const KandyKorner = () => {
     return (
         <>
+        <Route>
         <NavBar />
         <h1>Kandy Korner</h1>
         <ApplicationViews />
+        </Route>
         </>
     )
 }
