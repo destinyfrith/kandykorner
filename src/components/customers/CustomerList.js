@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 
 export const CustomerList = () => {
     const [customers, setCustomers] = useState([])
-    const [totalCustomerMessage, updateMessage] = useState("")
 
     useEffect(
         () => {
@@ -15,25 +14,11 @@ export const CustomerList = () => {
         []
     )
 
-    useEffect(
-        () => {
-            if (customers.length === 1) {
-                updateMessage("You have 1 customer")
-            }
-            else {
-                updateMessage(`You have ${customers.length} customers`)
-            }
-
-        },
-        [customers]
-    )
-
     // the slice method allows you to only show 5 customers at a time
     return (
         <>
-            <div>{totalCustomerMessage}</div>
             {
-                customers.slice(0, 5).map(
+                customers.map(
                     (customerObject) => {
                         return <p key={`customer--${customerObject.id}`}>{customerObject.name}</p>
                     }
