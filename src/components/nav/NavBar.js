@@ -17,6 +17,9 @@ export const NavBar = (props) => {
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/customers">Customers</Link>
             </li>
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="/purchases">My Orders</Link>
+            </li>
             <li className="navbar__item">
                 <Link className="navbar__link" to="#"
                 onClick={
@@ -30,3 +33,5 @@ export const NavBar = (props) => {
         </ul>
     )
 }
+
+// add a link called My Orders that displays a list of all candies the user wants to purchase
