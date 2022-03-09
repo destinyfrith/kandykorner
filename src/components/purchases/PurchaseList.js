@@ -9,9 +9,9 @@ export const PurchaseList = () => {
     // example: //ex: http://localhost:8088/purchases?customerId=97
     useEffect(
         () => {
-            fetch("`http://localhost:8088/purchases?customerId=1`")
-                .then((purchaseArray) => {
-                    updatePurchases(purchaseArray)
+            fetch("`http://localhost:8088/purchases`")
+                .then((purchases) => {
+                    updatePurchases(purchases)
                 })
         },
         []
@@ -24,7 +24,11 @@ export const PurchaseList = () => {
             {
                 purchases.map(
                     (purchase) => {
-                        return <p key={`purchase--${purchase.id}`}>{purchase.customer.id === parseInt(localStorage.getItem("kandy_customer")) ? `${purchase.product.name} ${purchase.product.price}` : ""}</p>
+                        if (purchase.customerId === parseInt(localStorage.getItem("kandy_customer"))) {
+                            return <div key={`purchase--${purchase.id}`}>
+                                <p>{purchase.product.name}: ${purchase.product.price}</p>
+                            </div>
+                        }
                     }
                 )
             }

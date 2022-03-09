@@ -25,7 +25,7 @@ export const ApplicationViews = () => {
             </Route>
             <Route exact path="/customers">
                 <CustomerList />
-                <Route path="/purchases">
+                <Route exact path="/purchases">
                     <PurchaseList />
                 </Route>
             </Route>
